@@ -1,7 +1,7 @@
 import sys
 
 # Read puzzle from stdin
-#0:81 is the index first 9 x 9 puzzle from the
+#0:81 is the index first 9 x 9 puzzle from the top95, 81:162 would be the second, and so on
 puzzle_str = ''.join((sys.stdin.read().split('\n')))[0:81]
 
 size = 9
