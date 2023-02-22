@@ -29,7 +29,26 @@ def get_clauses():
                 for k1 in range(9):
                     for k2 in range(k1+1, 9):
                         clauses.append([-value(i+(k1%3), j+(k1//3), d), -value(i+(k2%3), j+(k2//3), d)])
-      
+    
+    for d1 in range(1, 10):
+        for d2 in range(1, 10):
+            for i in range(1, 10):
+                for j in range(1, 10):
+                    if d1 < d2:
+                        clauses.append([-value(i, j, d1), -value(i, j, d2)])
+    
+
+    for x in range(1, 10):
+        for i in range(1, 10):
+            clauses.append([value(i, j, x) for j in range(1, 10)])
+        for j in range(1, 10):
+            clauses.append([value(i, j, x) for i in range(1, 10)])
+
+    for d in range(1, 10):
+        for i in 1, 4, 7:
+            for j in 1, 4 ,7:
+                clauses.append([value(i + (k % 3), j + (k // 3), d) for k in range(9)])
+
     # indexes_to_delete = []
     # for i in range(0, len(res)):
     #     for j in range(i + 1, len(res)):
