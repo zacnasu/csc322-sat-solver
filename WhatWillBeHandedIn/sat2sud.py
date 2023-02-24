@@ -16,7 +16,7 @@ def main():
 
 
 def value(i, j, d):
-    return 81 * (i - 1) + 9 * (j - 1) + d
+    return 81 * (i - 1) + 9 * (j - 1) + (d - 1) + 1
 
 
 def solve(sol):
