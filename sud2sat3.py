@@ -49,6 +49,7 @@ def get_clauses():
             for j in 1, 4 ,7:
                 clauses.append([value(i + (k % 3), j + (k // 3), d) for k in range(9)])
 
+    # If we desired to delete duplicate clauses
     # indexes_to_delete = []
     # for i in range(0, len(res)):
     #     for j in range(i + 1, len(res)):
@@ -62,17 +63,16 @@ def get_clauses():
 
 if __name__ == '__main__':
     # Read puzzle from stdin
-    puzzle_str = sys.stdin.read().strip()
+    puzzle_str = sys.stdin.read().replace(" ", "").replace("\n", "")
 
     # Convert puzzle string to a 2D array
     puzzle = [[int(puzzle_str[i + j*9]) if puzzle_str[i + j*9].isdigit() else 0 for i in range(9)] for j in range(9)]
-
     clauses = get_clauses()
     for i in range(0, 9):
         for j in range(0, 9):
             d = puzzle[i][j]
             # For each digit already known, a clause (with one literal). 
-            if d:
+            if d != 0:
                 clauses.append([value(i+1,j+1, d)])
 
     outputStr = "p cnf " + "729 " + str(len(clauses)) + "\n"

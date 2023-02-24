@@ -5,9 +5,10 @@ def value(i, j, k):
 
 def get_clauses(): 
     clauses = []
+
+    # each (i, j) cell has at least one (1-9) value
     for i in range(1, 10):
         for j in range(1, 10):
-            # denotes (at least) one of the 9 digits (1 clause)
             clauses.append([value(i, j, d) for d in range(1, 10)])
     
     for d in range(1, 10):
@@ -29,7 +30,8 @@ def get_clauses():
                 for k1 in range(9):
                     for k2 in range(k1+1, 9):
                         clauses.append([-value(i+(k1%3), j+(k1//3), d), -value(i+(k2%3), j+(k2//3), d)])
-      
+    
+    # If we desired to delete duplicate clauses
     # indexes_to_delete = []
     # for i in range(0, len(res)):
     #     for j in range(i + 1, len(res)):
@@ -43,17 +45,16 @@ def get_clauses():
 
 if __name__ == '__main__':
     # Read puzzle from stdin
-    puzzle_str = sys.stdin.read().strip()
+    puzzle_str = sys.stdin.read().replace(" ", "").replace("\n", "")
 
     # Convert puzzle string to a 2D array
     puzzle = [[int(puzzle_str[i + j*9]) if puzzle_str[i + j*9].isdigit() else 0 for i in range(9)] for j in range(9)]
-
     clauses = get_clauses()
     for i in range(0, 9):
         for j in range(0, 9):
             d = puzzle[i][j]
             # For each digit already known, a clause (with one literal). 
-            if d:
+            if d != 0:
                 clauses.append([value(i+1,j+1, d)])
 
     outputStr = "p cnf " + "729 " + str(len(clauses)) + "\n"

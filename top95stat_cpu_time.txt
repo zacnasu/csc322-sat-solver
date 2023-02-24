@@ -1,0 +1,28 @@
+Cpu time
+mean: 0.003300442105263158
+greatest: 0.009888
+lowest: 0.002588
+restarts
+mean: 1.9263157894736842
+greatest: 10.0
+lowest: 1.0
+conflicts
+mean: 152.61052631578949
+greatest: 1485.0
+lowest: 3.0
+decisions
+mean: 259.3263157894737
+greatest: 2301.0
+lowest: 10.0
+propagations
+mean: 6683.5684210526315
+greatest: 62805.0
+lowest: 714.0
+conflict literals
+mean: 1876.1368421052632
+greatest: 20678.0
+lowest: 38.0
+memory_used
+mean: 5.0543157894736845
+greatest: 5.12
+lowest: 5.04
