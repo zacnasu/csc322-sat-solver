@@ -15,18 +15,17 @@ def main():
         solve(sol)
 
 
-def v(i, j, d):
+def value(i, j, d):
     return 81 * (i - 1) + 9 * (j - 1) + d
 
 
 def solve(sol):
 
     output = ""
-    sol = set(sol)
 
     def read_cell(i, j):
         for d in range(1, 10):
-            if v(i, j, d) in sol:
+            if value(i, j, d) in sol:
                 return d
 
     for i in range(1, 10):
