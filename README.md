@@ -20,6 +20,8 @@ $ ./sat2sud <assign.txt >solution.txt
 $ cat solution.txt
 ```
 
+If the puzzle is unsatisfiable, sat2sud will output nothing to stdout.
+
 ## Extended task 1
 For extended task 1 the following files are used:
 1. sud2sat1
@@ -31,3 +33,23 @@ For extended task 1 the following files are used:
 Extended task 2 uses the following files:
 1. sud2sat2
 2. sud2sat2.py
+The code for extended task 2 can be run simililarly to the code for the original task and sat2sud can be reused.
+```
+$ ./sud2sat2 <puzzle.txt >puzzle.cnf
+$ minisat puzzle.cnf assign.txt >stat.txt
+$ ./sat2sud <assign.txt >solution.txt
+$ cat solution.txt
+```
+
+## Extended task 3
+
+Extended task 3 uses the following files:
+1. sud2sat3
+2. sud2sat3.py
+The code for extended task 3 can be run simililarly to the code for the original task and extended task 2. Additionally, sat2sud can be reused.
+```
+$ ./sud2sat3 <puzzle.txt >puzzle.cnf
+$ minisat puzzle.cnf assign.txt >stat.txt
+$ ./sat2sud <assign.txt >solution.txt
+$ cat solution.txt
+```
