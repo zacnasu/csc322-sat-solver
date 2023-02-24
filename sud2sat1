@@ -1,2 +1,7 @@
 #!/bin/bash
 python3 sud2sat1.py
+
+for i in {1..95}
+do 
+    minisat top${i}.cnf assign${i}.txt >> top95stat.txt
+done
