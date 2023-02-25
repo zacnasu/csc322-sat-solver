@@ -1,4 +1,4 @@
-# csc322-sat-solver
+# CSC322 Project 1 SAT-Solver
 
 Zachary Nasu V00911790\
 Chloe Blankers V00917921\
