@@ -2,7 +2,8 @@
 
 Zachary Nasu V00911790\
 Chloe Blankers V00917921\
-William McCulloch V00896197
+William McCulloch V00896197\
+Tristan Nicklaus V00913393
 
 This is an implentation of a SAT-Solver for sudoku puzzles.  It is written in python3 with a bash shell scipt wrapper to fit the specifications of the project.
 
